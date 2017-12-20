@@ -2,8 +2,8 @@
 layout: post
 title:  "安装Nginx!"
 date:   2017-12-20 16:00:00 -0700
-categories: server
-tags: nginx
+categories: jekyll server
+tags: jekyll nginx
 ---
 
 在CentOS7下安装Nginx。
