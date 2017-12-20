@@ -6,7 +6,7 @@ categories: jekyll server
 tags: jekyll nginx
 ---
 
-1.在CentOS7下安装Nginx[1]。 
+1.[在CentOS7下安装Nginx。][1] 
 
 
 [1]: https://funJia.github.io/server/nginx/安装
