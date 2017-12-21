@@ -10,7 +10,10 @@ tags: jekyll 前端
 gojs是一个能够让我们很容易的实现基于html5浏览器绘制具有交互性的图形图表的JavaScript框架。 gojs采用了面向对象的编程模式。以图形对象表示绘图模板。以用普通js对象存储数据作为数据模型，然后赋值给图形对象的属性作为数据绑定的模式。gojs同样提供了大量工具类来代表我们的交互行为。我们需要做的就是创建图形对象、构建数据模型、设置属性、绑定数据模型、使用工具类添加行为即可创建出具有丰富交互性能的各种图表。
 
 制作一个这样的图表
+
 ![效果](http://ogmy9zsil.bkt.clouddn.com//FE/goJs001.png)
+
+节点样式
 
 {% highlight javascript %}
         diagram.nodeTemplate =
@@ -26,4 +29,26 @@ gojs是一个能够让我们很容易的实现基于html5浏览器绘制具有�
             ); 
 {% endhighlight %}
 
+数据Model
 
+{% highlight javascript %}
+            diagram.model = new go.GraphLinksModel(
+                [ // a JavaScript Array of JavaScript objects, one per node
+                    { key: "Alpha", color: "white", fillColor: "green" },
+                    { key: "Beta", color: "orange", fillColor: "pink" },
+                    { key: "Gamma", color: "lightgreen", fillColor: "yellow" },
+                    { key: "Delta", color: "black", fillColor: "red" }
+                ],
+                [ // a JavaScript Array of JavaScript objects, one per link
+                    { from: "Alpha", to: "Beta" },
+                    { from: "Alpha", to: "Gamma" },
+                    { from: "Beta", to: "Beta" },
+                    { from: "Gamma", to: "Delta" },
+                    { from: "Delta", to: "Alpha" }
+                ]);
+{% endhighlight %}
+
+Model中color属性值映射到stroke对象上
+{% highlight javascript %}
+new go.Binding("stroke", "color")
+{% endhighlight %}
