@@ -52,3 +52,5 @@ Model中color属性值映射到stroke对象上
 {% highlight javascript %}
 new go.Binding("stroke", "color")
 {% endhighlight %}
+
+[demo](https://funjia.github.io/frontEnd/gojs/view/001.html)
